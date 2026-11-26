@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add Criminal</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='add_criminal.css') }}">
+</head>
+<body>
+  <div class="d-flex justify-content-between p-3">
+    <a href="{{ url_for('home') }}" class="btn btn-dark">← Back</a>
+    <a href="{{ url_for('logout') }}" class="btn btn-danger">Logout</a>
+  </div>  
+  <div class="container py-5">
+    <h2 class="text-center mb-4">Add Criminal Record</h2>
+    <div class="card p-5">
+      <form action="{{ url_for('add_criminal') }}" method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="name">Full Name</label>
+          <input type="text" class="form-control" id="name" name="name" required placeholder="Enter name">
+        </div>
+        <div class="mb-3">
+          <label for="age">Age</label>
+          <input type="number" class="form-control" id="age" name="age" placeholder="Enter age">
+        </div>
+        <div class="mb-3">
+          <label for="criminalType">Criminal Type</label>
+          <input type="text" class="form-control" id="criminalType" name="criminalType" placeholder="Type of crime">
+        </div>
+        <div class="mb-3">
+          <label for="lastSeen">Last Seen</label>
+          <input type="text" class="form-control" id="lastSeen" name="lastSeen" placeholder="Last seen location">
+        </div>
+        <div class="mb-3">
+          <label for="image">Upload Image</label>
+          <input type="file" class="form-control" id="image" name="image" accept="image/*" required>
+        </div>
+        <button type="submit" class="btn btn-dark w-100">Submit</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home - Criminal Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+</head>
+
+<body>
+
+  <div class="text-end p-3">
+    <a href="{{ url_for('logout') }}" class="btn btn-danger">Logout</a>
+  </div>
+
+  <div class="container py-5">
+    <h2 class="text-center mb-4" id="welcomeMessage">
+      Welcome, {{ session['name'] }}! Choose an Option
+    </h2>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 text-center">
+
+      <!-- Add Criminal -->
+      <div class="col">
+        <a href="{{ url_for('add_criminal') }}" class="text-decoration-none">
+          <div class="card p-4 h-100">
+            <h5>Add Criminal</h5>
+            <p>Form to add new criminal records</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Manage Criminal Records -->
+      <div class="col">
+        <a href="{{ url_for('manage_criminals') }}" class="text-decoration-none">
+          <div class="card p-4 h-100">
+            <h5>Manage Criminal Records</h5>
+            <p>Edit or delete existing records</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Recent Alerts -->
+      <div class="col">
+        <a href="{{ url_for('recent_alerts') }}" class="text-decoration-none">
+          <div class="card p-4 h-100">
+            <h5>Recent Alerts</h5>
+            <p>View alerts from face recognition system</p>
+          </div>
+        </a>
+      </div>
+       
+      <!-- Manage Users -->
+      <div class="col">
+        <a href="{{ url_for('manage_users') }}" class="text-decoration-none">
+          <div class="card p-4 h-100">
+            <h5>Manage Users</h5>
+            <p>Edit or manage system agents</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="{{ url_for('creators') }}" class="text-decoration-none">
+          <div class="card p-4 h-100">
+            <h5>Creators</h5>
+            <p>Meet the makers of the project</p>
+          </div>
+      </div>
+    </div>
+
+</body>
+
+</html>

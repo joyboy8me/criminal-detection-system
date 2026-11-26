@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="refresh" content="10"> <!-- Refresh every 10s -->
+  <title>Recent Alerts</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='recent_alerts.css') }}">
+</head>
+<body>
+  <div class="d-flex justify-content-between p-3">
+    <a href="{{ url_for('home') }}" class="btn btn-dark">← Back</a>
+    <a href="{{ url_for('logout') }}" class="btn btn-danger">Logout</a>
+  </div> 
+
+  <div class="container py-5">
+    <h2 class="text-center mb-4">Recent Alerts</h2>
+    <div class="card p-4">
+      <p>Here are the most recent alerts triggered by the face recognition system:</p>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Criminal Name</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% if alerts %}
+            {% for alert in alerts %}
+            <tr>
+              <td>{{ alert.time }}</td>
+              <td>{{ alert.name }}</td>
+              <td>{{ alert.location }}</td>
+            </tr>            
+            {% endfor %}
+          {% else %}
+            <tr><td colspan="4" class="text-center text-muted">No alerts found.</td></tr>
+          {% endif %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</body>
+</html>

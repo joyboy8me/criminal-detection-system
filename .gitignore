@@ -1,0 +1,21 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+env/
+
+# Flask instance folder (contains local DBs)
+instance/
+
+# Application logs and dynamic data
+alert_log.csv
+
+# Uploads and sensitive image datasets
+Static/uploads/
+known_faces/
+Static/Images/known_faces/
+
+# Secrets 
+.env

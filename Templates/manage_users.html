@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Manage Users</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='manage_users.css') }}">
+</head>
+<body>
+  <div class="d-flex justify-content-between p-3">
+    <a href="{{ url_for('home') }}" class="btn btn-dark">← Back</a>
+    <a href="{{ url_for('logout') }}" class="btn btn-danger">Logout</a>
+  </div>
+  
+  <div class="container py-5">
+    <h2 class="text-center mb-4">Manage Users</h2>
+    <div class="card p-4">
+      <p>This section allows you to view or remove users from the system.</p>
+      <div class="mb-3">
+        <a href="{{ url_for('add_user') }}" class="btn btn-success">Add User</a>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Role</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for user in users %}
+          <tr>
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.username }}</td>
+            <td>{{ user.role }}</td>
+            <td>
+              {% if user.role != 'admin' %}
+                <form action="{{ url_for('delete_user', user_id=user.id) }}" method="post" style="display:inline;">
+                  <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</button>
+                </form>
+              {% else %}
+                <span class="text-muted">Protected</span>
+              {% endif %}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</body>
+</html>

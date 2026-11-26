@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome - Criminal Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+<body>
+
+  <div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="col-md-6 card p-5 text-center">
+      <h3 class="mb-3">Welcome to the Criminal Detection System</h3>
+      <p class="mb-4 text-muted">AI-powered facial recognition for real-time surveillance & criminal tracking</p>
+      <a href="{{ url_for('login') }}" class="btn btn-dark mb-3 w-100">Login</a>
+    </div>
+  </div>
+
+  <script>
+    const user = sessionStorage.getItem('user');
+    if (user) {
+      window.location.href = "{{ url_for('home') }}";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Creators</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='creators.css') }}">
+</head>
+<body>
+  <div class="d-flex justify-content-between p-3">
+    <a href="{{ url_for('home') }}" class="btn btn-dark">← Back</a>
+    <a href="{{ url_for('logout') }}" class="btn btn-danger">Logout</a>
+  </div>
+
+  <div class="container py-5">
+    <h2 class="text-center mb-4">Meet the Creators of the Project</h2>
+    
+    <div class="maker-container">
+      <div class="maker-box">
+        <img src="{{ url_for('static', filename='krrish.jpg') }}" alt="Krrish Kumar">
+        <h4>Krrish Kumar</h4>
+        <p>Roll No: 241210070</p>
+        <br>
+        <p>Role : Backend Developer</p>
+      </div>
+
+      <div class="maker-box">
+        <img src="{{ url_for('static', filename='mishti.jpg') }}" alt="Mishti Gupta">
+        <h4>Mishti Gupta</h4>
+        <p>Roll No: 241210079</p>
+        <br>
+        <p>Role : AI Engineer</p>
+      </div>
+
+      <div class="maker-box">
+        <img src="{{ url_for('static', filename='pratham.jpg') }}" alt="Pratham Maurya">
+        <h4>Pratham Maurya</h4>
+        <p>Roll No: 241210074</p>
+        <br>
+        <p>Role : Frontend Developer</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

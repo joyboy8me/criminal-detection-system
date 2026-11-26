@@ -1,0 +1,29 @@
+/* Page background and font */
+body {
+    background-color: #d8d7cd;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Login card styling */
+  .login-card {
+    background-color: #f1eee9;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Navbar and footer */
+  .navbar,
+  footer {
+    background-color: #f1eee9;
+  }
+  
+  /* Navigation links */
+  .nav-link {
+    color: #333 !important;
+    font-weight: 500;
+  }
+  
+  .nav-link:hover {
+    color: #777 !important;
+  }
+  
